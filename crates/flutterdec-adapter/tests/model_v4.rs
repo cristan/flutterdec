@@ -701,7 +701,8 @@ fn genuine_unknown_names_are_accepted() {
 #[test]
 fn ordinary_names_that_resemble_defaults_are_still_accepted() {
     for name in [
-        "main", "Global", "build", "Object", "Null", "None", "Nil", "na", "Na", "NA", "tbd", "Tbd", "TBD", "nil",
+        "main", "Global", "build", "Object", "Null", "None", "Nil", "na", "Na", "NA", "tbd", "Tbd",
+        "TBD", "nil",
     ] {
         let bytes = mutated(model_json(&maximal_model()), |v| {
             v["functions"][0]["name"]["text"] = json!(name)
